@@ -73,14 +73,14 @@
             left: -30px;
         }
         .divider {
-    border: none; /* Remove the default border */
-    height: 2px; /* Thickness of the line */
-    background-color: rgb(23, 124, 229); /* Color of the line */
-    margin: 10px 10px; /* Space above and below the line */
-    width: 40%; /* Set the width of the line */
-    margin-left: auto; /* Center the line horizontally */
-    margin-right: auto;
-}
+            border: none;
+            height: 2px;
+            background-color: rgb(23, 124, 229);
+            margin: 10px 10px;
+            width: 40%;
+            margin-left: auto;
+            margin-right: auto;
+        }
         .quote-box div {
             width: 100%;
             margin-top: 50px;
@@ -94,19 +94,21 @@
             border: 1px solid rgb(23, 124, 229);
             width: 150px;
             height: 50px;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
             margin: 5px;
             cursor: pointer;
+            font-size: 16px;
         }
         .quote-box button img {
             width: 20px;
             margin-right: 10px;
         }
         .quote-box button:nth-child(2) {
-            background: transparent;
-            color: #333;
+            background: rgb(23, 124, 229); /* Ensure the same background color */
+            color: #fff; /* Ensure the text color is consistent */
+            border: 1px solid rgb(23, 124, 229); /* Ensure border matches the first button */
         }
     </style>
 </head>
@@ -116,11 +118,13 @@
         <hr class="divider">
         <blockquote id="quote">Loading</blockquote>
         <span id="author">Loading</span>
-        <button onclick="getquote(api)">New Quote</button>
-        <button onclick="tweet()">
-            <img src="C:\Users\afsha\Downloads\logo.png" alt="Twitter Logo" style="width: 20px; height: 20px; margin-right: 10px;">
-            Tweet
-        </button>
+        <div>
+            <button onclick="getquote(api)">New Quote</button>
+            <button onclick="tweet()">
+                <img src="C:\Users\afsha\Downloads\logo.png" alt="Twitter Logo" style="width: 20px; height: 20px; margin-right: 10px;">
+                Tweet
+            </button>
+        </div>
     </div>
     <script>
         const quote = document.getElementById("quote");
