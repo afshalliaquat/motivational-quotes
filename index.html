@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quote of the Day</title>
+
     <style>
         * {
             margin: 0;
@@ -12,6 +13,13 @@
         }
         body {
             background: #bbc6fa;
+        }
+        .line {
+            border: none;
+            height: 2px;
+            background: rgb(23, 124, 229);
+            margin: 10px auto 20px;
+            width: 75px;
         }
         .quote-box {
             background: #fff;
@@ -43,6 +51,7 @@
         }
         .quote-box blockquote {
             font-size: 26px;
+            margin-top: 20px;
             min-height: 110px;
         }
         .quote-box blockquote::before, .quote-box blockquote::after {
@@ -63,6 +72,15 @@
             top: 50%;
             left: -30px;
         }
+        .divider {
+    border: none; /* Remove the default border */
+    height: 2px; /* Thickness of the line */
+    background-color: rgb(23, 124, 229); /* Color of the line */
+    margin: 10px 10px; /* Space above and below the line */
+    width: 40%; /* Set the width of the line */
+    margin-left: auto; /* Center the line horizontally */
+    margin-right: auto;
+}
         .quote-box div {
             width: 100%;
             margin-top: 50px;
@@ -95,11 +113,12 @@
 <body>
     <div class="quote-box">
         <h1>Quote of the Day</h1>
+        <hr class="divider">
         <blockquote id="quote">Loading</blockquote>
         <span id="author">Loading</span>
         <button onclick="getquote(api)">New Quote</button>
         <button onclick="tweet()">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Twitter_Logo_as_of_2021.svg" alt="Twitter Logo">
+            <img src="C:\Users\afsha\Downloads\logo.png" alt="Twitter Logo" style="width: 20px; height: 20px; margin-right: 10px;">
             Tweet
         </button>
     </div>
