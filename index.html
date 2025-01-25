@@ -1,153 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quote of the Day</title>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background: #bbc6fa;
-        }
-        .line {
-            border: none;
-            height: 2px;
-            background: rgb(23, 124, 229);
-            margin: 10px auto 20px;
-            width: 75px;
-        }
-        .quote-box {
-            background: #fff;
-            width: 700px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 40px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.15);
-        }
-        .quote-box h2 {
-            font-size: 32px;
-            margin-bottom: 40px;
-            position: relative;
-        }
-        .quote-box h2::after {
-            content: '';
-            width: 75px;
-            height: 3px;
-            border-radius: 3px;
-            background: rgb(23, 124, 229);
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .quote-box blockquote {
-            font-size: 26px;
-            margin-top: 20px;
-            min-height: 110px;
-        }
-        .quote-box blockquote::before, .quote-box blockquote::after {
-            content: '"';
-        }
-        .quote-box span {
-            display: block;
-            margin-top: 10px;
-            float: right;
-            position: relative;
-        }
-        .quote-box span::before {
-            content: '';
-            width: 20px;
-            height: 2px;
-            background: rgb(23, 124, 229);
-            position: absolute;
-            top: 50%;
-            left: -30px;
-        }
-        .divider {
-            border: none;
-            height: 2px;
-            background-color: rgb(23, 124, 229);
-            margin: 10px 10px;
-            width: 40%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .quote-box div {
-            width: 100%;
-            margin-top: 50px;
-            display: flex;
-            justify-content: center;
-        }
-        .quote-box button {
-            background: rgb(23, 124, 229);
-            color: #fff;
-            border-radius: 25px;
-            border: 1px solid rgb(23, 124, 229);
-            width: 150px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .quote-box button img {
-            width: 20px;
-            margin-right: 10px;
-        }
-        .quote-box button:nth-child(2) {
-            background: rgb(23, 124, 229); /* Ensure the same background color */
-            color: #fff; /* Ensure the text color is consistent */
-            border: 1px solid rgb(23, 124, 229); /* Ensure border matches the first button */
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #bbc6fa;
+      }
+      .line {
+        border: none;
+        height: 2px;
+        background: rgb(23, 124, 229);
+        margin: 10px auto 20px;
+        width: 75px;
+      }
+      .quote-box {
+        background: #fff;
+        width: 700px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 40px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.15);
+      }
+      .quote-box h2 {
+        font-size: 32px;
+        margin-bottom: 40px;
+        position: relative;
+      }
+      .quote-box h2::after {
+        content: "";
+        width: 75px;
+        height: 3px;
+        border-radius: 3px;
+        background: rgb(23, 124, 229);
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .quote-box blockquote {
+        font-size: 26px;
+        margin-top: 20px;
+        min-height: 110px;
+      }
+      .quote-box blockquote::before,
+      .quote-box blockquote::after {
+        content: '"';
+      }
+      .quote-box span {
+        display: block;
+        margin-top: 10px;
+        float: right;
+        position: relative;
+      }
+      .quote-box span::before {
+        content: "";
+        width: 20px;
+        height: 2px;
+        background: rgb(23, 124, 229);
+        position: absolute;
+        top: 50%;
+        left: -30px;
+      }
+      .divider {
+        border: none;
+        height: 2px;
+        background-color: rgb(23, 124, 229);
+        margin: 10px 10px;
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .quote-box div {
+        width: 100%;
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+      }
+      .quote-box button {
+        background: rgb(23, 124, 229);
+        color: #fff;
+        border-radius: 25px;
+        border: 1px solid rgb(23, 124, 229);
+        width: 150px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      .quote-box button img {
+        width: 10px;
+        margin-right: 10px;
+        mix-blend-mode: color-burn;
+      }
+      .quote-box button:nth-child(2) {
+        background: rgb(23, 124, 229); /* Ensure the same background color */
+        color: #fff; /* Ensure the text color is consistent */
+        border: 1px solid rgb(23, 124, 229); /* Ensure border matches the first button */
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="quote-box">
-        <h1>Quote of the Day</h1>
-        <hr class="divider">
-        <blockquote id="quote">Loading</blockquote>
-        <span id="author">Loading</span>
-        <div>
-            <button onclick="getquote(api)">New Quote</button>
-            <button onclick="tweet()">
-                <img src="C:\Users\afsha\Downloads\logo.png" alt="Twitter Logo" style="width: 20px; height: 20px; margin-right: 10px;">
-                Tweet
-            </button>
-        </div>
+      <h1>Quote of the Day</h1>
+      <hr class="divider" />
+      <blockquote id="quote">Loading</blockquote>
+      <span id="author">Loading</span>
+      <div>
+        <button onclick="getquote(api)">New Quote</button>
+        <button onclick="tweet()">
+          <img
+            src="https://th.bing.com/th/id/R.ba88a579e50b937e23aad530a4d0e3de?rik=8f1whgN8OE60mg&riu=http%3a%2f%2fwww.lagunahillsnursery.com%2fx-logo.png&ehk=oQeYGIfbWaHHXu%2f2UKen1CI5YXBnxvmvI7bqO6TpMgk%3d&risl=&pid=ImgRaw&r=0"
+            alt="Twitter Logo"
+            style="width: 20px; height: 20px; margin-right: 10px"
+          />
+          Tweet
+        </button>
+      </div>
     </div>
     <script>
-        const quote = document.getElementById("quote");
-        const author = document.getElementById("author");
-        const api = "https://qapi.vercel.app/api/random";
+      const quote = document.getElementById("quote");
+      const author = document.getElementById("author");
+      const api = "https://qapi.vercel.app/api/random";
 
-        async function getquote(url) {
-            const response = await fetch(url);
-            const data = await response.json();
+      async function getquote(url) {
+        const response = await fetch(url);
+        const data = await response.json();
 
-            quote.innerHTML = data.quote;
-            author.innerHTML = data.author;
-        }
-        getquote(api);
+        quote.innerHTML = data.quote;
+        author.innerHTML = data.author;
+      }
+      getquote(api);
 
-        function tweet() {
-            window.open(
-                "https://twitter.com/intent/tweet?text=" + 
-                encodeURIComponent(`${quote.innerHTML} ---- by ${author.innerHTML}`),
-                "Tweet Window",
-                "width=600,height=300"
-            );
-        }
+      function tweet() {
+        window.open(
+          "https://twitter.com/intent/tweet?text=" +
+            encodeURIComponent(
+              `${quote.innerHTML} ---- by ${author.innerHTML}`
+            ),
+          "Tweet Window",
+          "width=600,height=300"
+        );
+      }
     </script>
-</body>
+  </body>
 </html>
